@@ -40,24 +40,35 @@
     ></script>
 
     <!--    Для добавления кнопок в маркеры-->
-    <script type="text/javascript" src="../maps/buttonInMarkers/leaflet-popup-modifier.js"></script>
+    <link rel="stylesheet" href="../testNewFunction/filterMarkersButton/leaflet-easy-button.css"/>
+    <link rel="stylesheet" href="../testNewFunction/filterMarkersButton/leaflet-tag-filter-button.css"/>
+    <link rel="stylesheet" href="../testNewFunction/filterMarkersButton/ripple.min.css"/>
+
     <link rel="stylesheet" href="../maps/buttonInMarkers/leaflet-popup-modifer.css"/>
     <link rel="stylesheet" href="../maps/buttonInMarkers/index.css"/>
+
+    <script type="text/javascript" src="../maps/buttonInMarkers/leaflet-popup-modifier.js"></script>
+    <script type="text/javascript" src="filterMarkersButton/leaflet-easy-button.js"></script>
+    <script type="text/javascript" src="filterMarkersButton/leaflet-tag-filter-button.js"></script>
+
+
+<!-- кнопка-->
+    <link rel="stylesheet" href="button.css"/>
+
+<!--  кнопка для фильрациии маркеров-->
+    <link rel="stylesheet" href="filterMarkersButton/leaflet-tag-filter-button.css"/>
 /
 </head>
 
 <body>
 <div
         id="map"
-        style="  position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;"
 ></div>
 
-
-<script type="text/javascript" src="newMarkers.js"></script>
+<button id="filterButton">
+    Фильтры
+</button>
+<script type="text/javascript" src="markersAddVidMusora.js"></script>
 <script type="text/javascript" src="showMarker.js"></script>
 </body>
 </html>
