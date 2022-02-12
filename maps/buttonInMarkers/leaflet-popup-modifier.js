@@ -82,10 +82,10 @@ L.Popup.include({
             var userActionButtons = this._userActionButtons = L.DomUtil.create('div', prefix + '-useraction-buttons', wrapper);
             var removeButton = this._removeButton = L.DomUtil.create('a', prefix + '-remove-button', userActionButtons);
             removeButton.href = '#close';
-            removeButton.innerHTML = `Remove this ${nametag}`;
+            removeButton.innerHTML = `Удалить маркер`;
             var editButton = this._editButton = L.DomUtil.create('a', prefix + '-edit-button', userActionButtons);
             editButton.href = '#edit';
-            editButton.innerHTML = 'Edit';
+            editButton.innerHTML = 'Изменить';
             this.options.minWidth = 160;
 
             L.DomEvent.on(removeButton, 'click', this._onRemoveButtonClick, this);
@@ -117,6 +117,7 @@ L.Popup.include({
         inputField.setAttribute("contenteditable", "true");
         inputField.innerHTML = this.getContent()
 
+        console.log(inputField.innerHTML)
 
         //  -----------  Making the input field grow till max width ------- //
         inputField.style.width = inputFieldWidth + 'px';
@@ -147,10 +148,10 @@ L.Popup.include({
         var inputActions = this._inputActions = L.DomUtil.create('div', 'leaflet-popup-input-actions', editScreen);
         var cancelButton = this._cancelButton = L.DomUtil.create('a', 'leaflet-popup-input-cancel', inputActions);
         cancelButton.href = '#cancel';
-        cancelButton.innerHTML = 'Cancel';
+        cancelButton.innerHTML = 'Отмена';
         var saveButton = this._saveButton = L.DomUtil.create('a', 'leaflet-popup-input-save', inputActions);
         saveButton.href = "#save";
-        saveButton.innerHTML = 'Save';
+        saveButton.innerHTML = 'Сохранить';
 
         L.DomEvent.on(cancelButton, 'click', this._onCancelButtonClick, this)
         L.DomEvent.on(saveButton, 'click', this._onSaveButtonClick, this)
@@ -172,9 +173,10 @@ L.Popup.include({
     _onSaveButtonClick: function (e) {
         var inputField = this._inputField;
         if (inputField.innerHTML.length > 0){
+            console.log(inputField.innerHTML)
             this.setContent(inputField.innerHTML)
         } else {
-            alert('Enter something');
+            alert('Введите что-нибудь');
         };
 
         L.DomUtil.remove(this._editScreen);
