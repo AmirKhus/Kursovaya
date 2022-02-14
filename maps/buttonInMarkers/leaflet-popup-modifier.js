@@ -171,9 +171,14 @@ L.Popup.include({
     },
 
     _onSaveButtonClick: function (e) {
+        var arrayDataInformationFromMarkers
         var inputField = this._inputField;
         if (inputField.innerHTML.length > 0){
-            console.log(inputField.innerHTML)
+            arrayDataInformationFromMarkers = inputField.innerHTML.split('<br>')
+            console.log(arrayDataInformationFromMarkers[3].replace('<b>IATA/FAA:</b> ', ''))
+            console.log(arrayDataInformationFromMarkers[4].replace('<b>ICAO:</b> ', ''))
+            console.log(arrayDataInformationFromMarkers[5].replace('<b>Altitude:</b> ', ''))
+            console.log(arrayDataInformationFromMarkers[6].replace('<b>Timezone:</b> ', ''))
             this.setContent(inputField.innerHTML)
         } else {
             alert('Введите что-нибудь');
